@@ -1,0 +1,232 @@
+/*******************************************************************************
+ *                                                                             *
+ * Root					 				                       				   *
+ *                                                                             *
+ ******************************************************************************/
+.root {
+ /*teal */
+ -teal-primary: #26a69a;
+ -teal-hover: #2bbbad;
+ /*blue */
+ -blue-primary: #0493EF;
+ -blue-hover: #039be5;
+ /*red */
+ -red-primary: #e53935;
+ -red-hover: #F44336;
+ /*default text */
+ -fx-text-base-color: #ffffff;
+ -fx-text-control-title-color: rgb(130.0, 130.0, 130.0);
+ -fx-text-fill: -fx-text-base-color;
+ -dark: #384248;
+ -fx-background-color: -dark;
+ /*default font */
+ -fx-font-family: 'Roboto Medium';
+ -fx-font-size: 14.0px;
+ -fx-disabled-opacity: 0.6;
+ /*default colors */
+ -swatch-grey: rgb(200.0, 200.0, 200.0);
+ -swatch-dark-grey: rgb(150.0, 150.0, 150.0);
+ -swatch-light-grey: rgb(230.0, 230.0, 230.0);
+ -swatch-toolbar: rgb(245.0, 245.0, 245.0);
+ -swatch-toolbar-selected: rgb(215.0, 215.0, 215.0);
+ -fx-dark-text-color: white; /* Text color when selected*/
+ -fx-mid-text-color: -fx-text-base-color;
+ -fx-light-text-color: -swatch-light-grey;
+ -fx-body-color: white;
+ -fx-dark-text-color: white;
+ -fx-text-base-color: #ffffff;
+ -primary: #26a69a;
+ -swatch-200: #90CAF9;
+ -swatch-300: #64BEF6;
+ -swatch-400: #42A5F5;
+ -swatch-500: #2196F3;
+}
+/*******************************************************************************
+ *                                                                             *
+ * Button					 				                       				   *
+ *                                                                             *
+ ******************************************************************************/
+.button {
+ -fx-padding: 6px 12px 6px 12px;
+}
+
+.btn-teal {
+ -fx-text-fill: white;
+ -fx-background-color: -teal-primary;
+ -fx-font-weight: Bold;
+}
+
+.btn-teal:hover {
+ -fx-text-fill: white;
+ -fx-background-color: -teal-hover;
+}
+
+.btn-blue {
+ -fx-text-fill: white;
+ -fx-background-color: -blue-primary;
+ -fx-font-weight: Bold;
+}
+
+.btn-blue:hover {
+ -fx-text-fill: white;
+ -fx-background-color: -blue-hover;
+}
+
+.btn-red {
+ -fx-text-fill: white;
+ -fx-background-color: -red-primary;
+ -fx-font-weight: Bold;
+}
+
+.btn-red:hover {
+ -fx-text-fill: white;
+ -fx-background-color: -red-hover;
+}
+
+.btn-browse {
+ -fx-text-fill: white;
+ -fx-background-color: -teal-primary;
+ -fx-font-weight: Bold;
+ -fx-padding: 3px 15px 3px 15px;
+}
+
+.btn-browse:hover {
+ -fx-text-fill: white;
+ -fx-background-color: -teal-hover;
+}
+/*******************************************************************************
+ *                                                                             *
+ * Label                                                                       *
+ *                                                                             *
+ ******************************************************************************/
+.label {
+ -fx-text-fill: -fx-text-base-color;
+ -fx-font-size: 14.0px;
+ -fx-padding: 2.0px 0.0px;
+}
+
+.label:disabled {
+ -fx-opacity: -fx-disabled-opacity;
+}
+
+.label:show-mnemonics>.mnemonic-underline {
+ -fx-stroke: -fx-text-base-color;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Text, Text field & Text area                                                *
+ *                                                                             *
+ ******************************************************************************/
+.text {
+ -fx-font-smoothing-type: gray;
+}
+
+.text-area, .text-field {
+ -fx-background-color: transparent;
+ -fx-background-radius: 2.0;
+ -fx-padding: 0.5em 0.5em 0.5em 0.1em;
+ -fx-border-color: -swatch-grey;
+ -fx-border-width: 0.0 0.0 2.0 0.0;
+ -fx-prompt-text-fill: derive(-dark, 50.0%);
+ -fx-highlight-fill: rgb(94.0, 203.0, 234.0);
+}
+
+.text-area .text, .text-field>*>.text {
+ -fx-effect: null;
+ -fx-fill: -dark;
+}
+
+.text-area {
+ -fx-padding: 0.15em;
+}
+
+.text-area .content {
+ -fx-padding: 0.7em;
+ -fx-border-width: 0.0;
+ -fx-background-color: transparent;
+}
+
+.text-area:focused  .content {
+ -fx-background-color: transparent;
+}
+
+.text-area:focused, .text-field:focused {
+ -fx-border-color: -primary;
+}
+/*******************************************************************************
+ *                                                                             *
+ * CheckBox                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+.check-box {
+ -fx-padding: 10.0;
+}
+
+.check-box .text {
+ -fx-fill: -fx-text-base-color;
+}
+
+.check-box>.box, .check-box>.box.unfocused, .check-box:disabled>.box,
+ .check-box:indeterminate>.box {
+ -fx-border-radius: 4.0;
+ -fx-border-color: -swatch-grey;
+ -fx-border-width: 2.0;
+ -fx-background-radius: 4.0;
+ -fx-background-color: transparent;
+ -fx-padding: 1.0;
+}
+
+.check-box:selected>.box {
+ -fx-border-color: -primary;
+ -fx-background-color: -primary;
+}
+
+.check-box:focused>.box {
+ -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.3), 6.0, 0.3, 0.0,
+  0.0);
+}
+
+.check-box:selected>.box>.mark {
+ -fx-background-color: white;
+}
+
+.check-box:indeterminate>.box>.mark {
+ -fx-background-color: -primary;
+ -fx-padding: 0.45em;
+}
+/*******************************************************************************
+ *                                                                             *
+ * RadioButton                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+.radio-button {
+ -fx-padding: 10.0;
+}
+
+.radio-button .text {
+ -fx-fill: -fx-text-base-color;
+}
+
+.radio-button>.radio, .radio-button>.radio.unfocused, .radio-button:disabled>.radio,
+ .radio-button:selected>.radio {
+ -fx-border-radius: 100.0;
+ -fx-border-color: -swatch-grey;
+ -fx-border-width: 2.0;
+ -fx-background-radius: 100.0;
+ -fx-background-color: transparent;
+ -fx-padding: 3.0 3.0 3.0 3.0;
+}
+
+.radio-button:focused>.radio {
+ -fx-background-color: transparent;
+}
+
+.radio-button:focused:armed>.radio {
+ -fx-background-color: -primary;
+}
+
+.radio-button:selected>.radio>.dot {
+ -fx-background-color: -primary;
+ -fx-background-insets: 0.0;
+}
