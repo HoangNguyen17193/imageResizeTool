@@ -22,7 +22,7 @@ public class App extends Application {
         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
         Scene scene = new Scene(rootNode, 600, 420);
         scene.getStylesheets().add("/styles/materialDark.css");
-        scene.getStylesheets().add("/styles/resizeTool.css");
+        scene.getStylesheets().add("/styles/resizeTool.css");   
 
         stage.setTitle("Resize Tool");
         stage.setScene(scene);

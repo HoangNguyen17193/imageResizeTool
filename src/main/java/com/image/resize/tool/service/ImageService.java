@@ -13,6 +13,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.imgscalr.Scalr;
 
+import com.image.resize.tool.exception.GeneralException;
+
 public class ImageService {
 
     public static void createThumbnail(String inputFilePath, String outputFolderPath, int size) throws IOException {
@@ -33,9 +35,7 @@ public class ImageService {
                     + ".jpg";
             FileUtils.writeByteArrayToFile(new File(outputFilePath), byteArrayOutputStream.toByteArray());
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
+            throw new GeneralException("cannot resize", e);
         } finally {
             byteArrayOutputStream.close();
         }

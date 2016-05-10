@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="mainPanel" prefHeight="426.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.image.resize.tool.controller.MainController">
- <Label layoutX="29.0" layoutY="148.0" text="Input Directory:" />
- <TextField fx:id="inputDirectory" layoutX="140.0" layoutY="144.0" prefHeight="25.0" prefWidth="353.0" />
+<AnchorPane fx:id="mainPanel" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
+ fx:controller="com.image.resize.tool.controller.MainController">
+ <Label layoutX="29.0" layoutY="140.0" text="Input Directory:" />
+ <TextField fx:id="inputDirectory" layoutX="140.0" layoutY="140.0" prefHeight="25.0" prefWidth="353.0" />
  <Label layoutX="21.0" layoutY="195.0" text="Output Directory:" />
  <TextField fx:id="outputDirectory" layoutX="140.0" layoutY="191.0" prefHeight="25.0" prefWidth="353.0" />
- <Button layoutX="430.0" layoutY="270.0" mnemonicParsing="false" styleClass="btn-blue" text="Button" />
  <Label fx:id="messageLabel" layoutX="45.0" layoutY="182.0" />
  <Button layoutX="500.0" layoutY="148.0" mnemonicParsing="false" onAction="#chooseInputDirectory" styleClass="btn-browse" text="Browse" />
  <Button layoutX="500.0" layoutY="197.0" mnemonicParsing="false" onAction="#chooseOutputDirectory" styleClass="btn-browse" text="Browse" />
+ <fx:define>
+  <ToggleGroup fx:id="imageSize" />
+ </fx:define>
+ <children>
+  <RadioButton layoutX="130.0" layoutY="240.0" mnemonicParsing="false" text="800" toggleGroup="$imageSize" userData="800" />
+  <RadioButton layoutX="230.0" layoutY="240.0" mnemonicParsing="false" text="1024" toggleGroup="$imageSize" selected="true" userData="1024" />
+  <RadioButton layoutX="330.0" layoutY="240.0" mnemonicParsing="false" text="1280" toggleGroup="$imageSize" userData="1280" />
+  <RadioButton layoutX="430.0" layoutY="240.0" mnemonicParsing="false" text="1600" toggleGroup="$imageSize" userData="1600" />
+ </children>
+ <Button layoutX="450.0" layoutY="300.0" mnemonicParsing="false" styleClass="btn-blue" text="Resize" onAction="#process" />
  <Pane fx:id="footer" layoutY="380.0" prefHeight="50.0" prefWidth="623.0">
-      <children>
-         <Label layoutX="395.0" layoutY="17.0" text="Designed by hoang nguyen" />
-      </children></Pane>
+  <children>
+   <Label layoutX="395.0" layoutY="17.0" text="Designed by Hoang Nguyen" />
+  </children>
+ </Pane>
 </AnchorPane>

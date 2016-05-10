@@ -1,10 +1,17 @@
 package com.image.resize.tool.controller;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import com.image.resize.tool.exception.GeneralException;
+import com.image.resize.tool.service.FileService;
+import com.image.resize.tool.service.ImageService;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
@@ -20,6 +27,8 @@ public class MainController {
     private Label messageLabel;
     @FXML
     private AnchorPane mainPanel;
+    @FXML
+    private ToggleGroup imageSize;
 
     public void chooseFile() {
         Stage stage = (Stage) mainPanel.getScene().getWindow();
@@ -47,6 +56,21 @@ public class MainController {
             outputDirectory.setText("No Directory selected");
         } else {
             outputDirectory.setText(directory.getAbsolutePath());
+        }
+    }
+
+    public void process() {
+        if (inputDirectory != null && !inputDirectory.getText().trim().isEmpty() && outputDirectory != null
+                && !outputDirectory.getText().trim().isEmpty()) {
+            int size = Integer.parseInt(imageSize.getSelectedToggle().getUserData().toString());
+            List<String> filePaths = FileService.filterFilePaths(inputDirectory.getText().trim());
+            for (String filePath : filePaths) {
+                try {
+                    ImageService.createThumbnail(filePath, outputDirectory.getText().trim(), size);
+                } catch (IOException e) {
+                    throw new GeneralException("cannot resize", e);
+                }
+            }
         }
     }
 
