@@ -4,8 +4,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="mainPanel" prefHeight="426.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.image.resize.tool.MainController">
+<AnchorPane fx:id="mainPanel" prefHeight="426.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.image.resize.tool.controller.MainController">
  <Label layoutX="29.0" layoutY="148.0" text="Input Directory:" />
  <TextField fx:id="inputDirectory" layoutX="140.0" layoutY="144.0" prefHeight="25.0" prefWidth="353.0" />
  <Label layoutX="21.0" layoutY="195.0" text="Output Directory:" />
@@ -14,4 +15,8 @@
  <Label fx:id="messageLabel" layoutX="45.0" layoutY="182.0" />
  <Button layoutX="500.0" layoutY="148.0" mnemonicParsing="false" onAction="#chooseInputDirectory" styleClass="btn-browse" text="Browse" />
  <Button layoutX="500.0" layoutY="197.0" mnemonicParsing="false" onAction="#chooseOutputDirectory" styleClass="btn-browse" text="Browse" />
+ <Pane fx:id="footer" layoutY="380.0" prefHeight="50.0" prefWidth="623.0">
+      <children>
+         <Label layoutX="395.0" layoutY="17.0" text="Designed by hoang nguyen" />
+      </children></Pane>
 </AnchorPane>

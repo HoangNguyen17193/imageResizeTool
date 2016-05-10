@@ -1,4 +1,4 @@
-package com.image.resize.tool;
+package com.image.resize.tool.controller;
 
 import java.io.File;
 

@@ -20,10 +20,11 @@ public class App extends Application {
         String fxmlFile = "/layout/main.fxml";
         FXMLLoader loader = new FXMLLoader();
         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
-        Scene scene = new Scene(rootNode, 600, 500);
+        Scene scene = new Scene(rootNode, 600, 420);
         scene.getStylesheets().add("/styles/materialDark.css");
+        scene.getStylesheets().add("/styles/resizeTool.css");
 
-        stage.setTitle("Hello JavaFX and Maven");
+        stage.setTitle("Resize Tool");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
