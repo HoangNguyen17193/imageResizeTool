@@ -3,7 +3,7 @@
  <groupId>com.image.resize.tool</groupId>
  <artifactId>ResizeTool</artifactId>
  <packaging>jar</packaging>
- <version>1.0-SNAPSHOT</version>
+ <version>1.0</version>
  <name>ResizeTool</name>
  <url>http://maven.apache.org</url>
 

@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 
 <AnchorPane fx:id="mainPanel" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
  fx:controller="com.image.resize.tool.controller.MainController">
@@ -14,7 +15,6 @@
  <TextField fx:id="inputDirectory" layoutX="140.0" layoutY="140.0" prefHeight="25.0" prefWidth="353.0" />
  <Label layoutX="21.0" layoutY="195.0" text="Output Directory:" />
  <TextField fx:id="outputDirectory" layoutX="140.0" layoutY="191.0" prefHeight="25.0" prefWidth="353.0" />
- <Label fx:id="messageLabel" layoutX="45.0" layoutY="182.0" />
  <Button layoutX="500.0" layoutY="148.0" mnemonicParsing="false" onAction="#chooseInputDirectory" styleClass="btn-browse" text="Browse" />
  <Button layoutX="500.0" layoutY="197.0" mnemonicParsing="false" onAction="#chooseOutputDirectory" styleClass="btn-browse" text="Browse" />
  <fx:define>
@@ -32,4 +32,7 @@
    <Label layoutX="395.0" layoutY="17.0" text="Designed by Hoang Nguyen" />
   </children>
  </Pane>
+ <ImageView fx:id="loader" fitHeight="35.0" fitWidth="35.0" layoutX="520.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+ </ImageView>
+ <Label fx:id="messageLabel" layoutX="50.0" layoutY="300.0"/>
 </AnchorPane>
