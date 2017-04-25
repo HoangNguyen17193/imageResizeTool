@@ -15,7 +15,8 @@ public class FileService {
     public static List<String> filterFilePaths(String folderPath) {
         List<String> filePaths = new ArrayList<>();
         try (Stream<Path> pathStream = Files.walk(Paths.get(folderPath))) {
-            filePaths = pathStream.map(String::valueOf).filter(path -> filterFilePath(path))
+            filePaths = pathStream.map(String::valueOf)
+                    .filter(path -> filterFilePath(path))
                     .collect(Collectors.toList());
         } catch (IOException e) {
             throw new GeneralException("cannot get file paths", e);
